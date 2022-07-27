@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Joe Malope CV</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+      crossorigin="anonymous"
+    />
+    <link href="css/style.css" type="text/css" rel="stylesheet" />
+  </head>
+  <body>
+    <div id="app">
+      <section class="cover">
+        <div class="sidenav"></div>
+        <div class="body except">
+          <div class="bg-cover">
+            <img
+              class="cover-img"
+              src="./images/nubelson-fernandes-6rrIT4YcqoI-unsplash.jpg"
+            />
+          </div>
+          <div class="overlay">
+            <div class="cover-content">
+              <p id="name" class="name">{{ name }}</p>
+              <p class="title">Curriculum vitae</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- <section>
+
+            <div class="sidenav">
+                <h5>To.</h5>
+                <h6>
+                    {{employer}}
+                </h6>
+                <br />
+                <h5>
+                    From.
+                </h5>
+                <h6>
+                    {{ name }}
+                </h6>
+            </div>
+            <div class="body">
+                <div class="sub-section">
+                    <div class="header">
+                        <h5 class="">
+                            Cover Letter
+                        </h5>
+                    </div>
+                    <div class="content-box">
+                        <p class="content-text left">
+                            I am writing to apply for the position of a {{profession}} at {{employer}}, which I learned about via Naomii. I believe I would be the best fit for the company because I am a creative thinker and a problem solver whether in design problems or logical
+                            problems. Throughout my {{degree}} degree, I learned a wide range of skills from UX design, Publishing, Game design, Adobe Photoshop, Illustrator, Animate, InDesign and alongside HTML, CSS, JAVASCRIPT, the entire LAMP & MERN
+                            stack, alongside good fundamentals of communicative design. I have an eye for great design and have years of experience working with Adobe software and various Web development technologies.<br /><br/>                            I am very passionate about creating beautiful work, I pay great attention to detail and over the past four years, I’ve been working with real-world clients and have very valuable experience dealing with real-world deliverables
+                            and meeting tight deadlines.<br /> I have included my CV to support my application. It shows that I would bring important skills to the position.<br /><br /> I spend my spare learning about decision-making psychology and behavioral
+                            economics to better understand the human decision-making process, I believe this will enable me to build more user-centric products that communicate information in the most influential way, I also enjoy sharpening my skills
+                            ensuring that I’m constantly improving by practicing and reading about new design and UX trends.<br /> I am eager to learn and try new things, I never want to be limited by the things I’ve done or know. I believe in constantly
+                            learning and growing.<br /><br /> I would like to work for {{employer}} because I believe I would enjoy the great client-orientated atmosphere and the opportunity to work with their talented team because I believe I would be
+                            able to learn a lot from them. I would enjoy having the opportunity to talk with you more about this position, and how I could use my skills to benefit your organization.<br /><br /> Thank you for considering my application.
+                            I look forward to hearing from you.<br /><br /> {{name}}
+                            <br />
+                            <br /> {{profession}}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section> -->
+
+      <section class="bio">
+        <div class="sidenav">
+          <div>
+            <div class="profile-img">
+              <img src="images/propic.jpg" alt="" />
+            </div>
+            <div class="titles">
+              <h5>{{ name }}</h5>
+              <h5>{{profession}}</h5>
+              <div class="stripe"></div>
+            </div>
+
+            <div class="personal-skills">
+              <br />
+              <h5>Personal skills</h5>
+              <div class="stripe"></div>
+              <ul class="skill-list">
+                <li v-for="skill in personalSkills">{{skill}}</li>
+              </ul>
+            </div>
+            <div class="technical-skills">
+              <br />
+              <h5>Design skills</h5>
+              <div class="stripe"></div>
+              <ul class="skill-list">
+                <li v-for="software in softwareSkills">
+                  <div class="gauge-container">
+                    <div class="icon">
+                      <img class="icon-img" :src="software.path" />
+                    </div>
+                    <div class="">
+                      <p class="skill-name">{{software.name}}</p>
+                      <div class="gauge-progress-bar">
+                        <div :class="`bar level`+software.level"></div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="body">
+          <div class="sub-section">
+            <div class="header">
+              <h5>Introduction</h5>
+            </div>
+            <div class="content-box">
+              <p class="content-text">
+                I believe I will be a great addition to your team because I
+                possess a unique experience set. I am proficient in UX/UI design
+                (5-year experience), web development (5-years with a preference
+                for frontend dev) with over 4-year experience in brand design,
+                and an understanding of how psychological tools can be used in
+                software to influence some human decision-making processes. If
+                you’re wondering how that may be beneficial to you, so I have an
+                incite that allows me to focus on and problems prioritize you
+                may not even realize are there. I've always been passionate
+                about designing and developing the best user experiences and
+                user interfaces because I believe they can be the single most
+                important entry point for potential customers into any brand if
+                carefully designed and implemented. My excitement and incite on
+                UX/UI design and web development is how I believe I can be a
+                great benefit to your company.
+              </p>
+            </div>
+          </div>
+
+          <div class="sub-section">
+            <div class="header">
+              <h5>Education</h5>
+            </div>
+            <div class="content-box">
+              <div class="varsity-box">
+                <img
+                  class="varsity-logo"
+                  src="https://upload.wikimedia.org/wikipedia/en/thumb/4/44/University_of_Pretoria_FC_logo.svg/1200px-University_of_Pretoria_FC_logo.svg.png"
+                  alt=""
+                />
+                <p class="varsity-name">Univerity of Pretoria</p>
+                <p class="degree">{{degree}}</p>
+              </div>
+              <p class="content-text">
+                The degree focuses on the dissemination of information through
+                various media it focuses on different aspects such as visual
+                design, publishing, and programming fundamentals. The degree was
+                designed with the intent to introduce software developers who
+                have a fundamental understanding of computer science, visual
+                communication, and interaction design, It has allowed me to be
+                able to move with versatility and analyze problems on logical,
+                user experiences and visual levels.
+              </p>
+              <br />
+              <p class="content-text">
+                Extensive experience programming in the following languages:<br /><br />
+                C-based languages C++, C, C#, Java, Javascript, Typescript ,
+                Actionscript, PHP XML, XPath, XSLT
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="sidenav">
+          <div>
+            <div class="Personal-skills">
+              <br />
+              <h5>Personal interests</h5>
+              <div class="stripe"></div>
+              <ul class="skill-list">
+                <li v-for="interest in personalInterests">
+                  <div class="pill">
+                    <p class="skill-name">{{interest}}</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="">
+              <br />
+              <h5>Web portfolio</h5>
+              <div class="stripe"></div>
+              <div>
+                <div>
+                  <p v-for="link in portfoliolinks">
+                    <a class="web-portfolio-link" :href="link">{{link}}</a>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="">
+              <br />
+              <h5>contact Details</h5>
+              <div class="stripe"></div>
+              <div>
+                <p>
+                  <a class="web-portfolio-link" :href="`tel:${cell}`"
+                    >{{cell}}</a
+                  >
+                </p>
+              </div>
+
+              <p>
+                <a class="web-portfolio-link" :href="`mailto:${email}`"
+                  >{{email}}</a
+                >
+              </p>
+              <p class="address">
+                <a class="web-portfolio-link" style="text-decoration: none">
+                  86 Hawthorne Avenue, <br />
+                  Pretoria
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="body">
+          <div class="sub-section">
+            <div class="header">
+              <h5 class="longer">Professional Experience</h5>
+            </div>
+            <div class="content-box">
+              <div class="varsity-box">
+                <p class="">
+                  Macaroni ink - Freelancer Web dev/UX designer(Jan 2017 - June
+                  2019)
+                </p>
+              </div>
+              <p class="content-text">
+                During this period, I've had the chance to work on various
+                projects that include Logo & branding design, UI/UX design,
+                rapid prototyping, and Web application development. I faced
+                several obstacles, but overall, I have gained the following
+                experiences: Conflict resolution, client support, and building
+                investor and client relations.
+              </p>
+
+              <div class="varsity-box">
+                <p class="">Kaymedia - Frontend developer (June 2019 - 2020)</p>
+              </div>
+              <p class="content-text">
+                I worked as a frontend developer, dabbled with backend work as
+                well. I primarily worked on UX-driven web experiences,
+                maintained PHP code, and frequently translated high-fidelity
+                prototypes into web experiences; I also worked on a QR
+                code-based RSVP system powered by the Twilio SMS engine.
+              </p>
+
+              <div class="varsity-box">
+                <p>Pocketime - Frontend Developer (May 2020 - July 2021)</p>
+              </div>
+              <p class="content-text">
+                At Pocketime I worked as a product lead for the warehouse
+                management system product. My responsibilities include frontend
+                development and UX/UI design, I use my diverse skill set to
+                solve problems throughout the different steps of the product
+                development cycle. <br /><br />The steps I generally follow
+                include: Analyzing a business's existing processes, with the use
+                of the design thinking methodology to developing and designing
+                the most user-friendly solution, part of the process involves
+                communicating the solution through wireframing and iterating on
+                the wireframes as many times as necessary to reach the solution
+                that best tackles the clients' problem and finally move on to
+                the high-level prototyping phase.
+              </p>
+              <div class="varsity-box">
+                <p>
+                  Velocity - Frontend Developer/UX Lead (August 2021 - present)
+                </p>
+              </div>
+              <p class="content-text">
+                Velocity is a health-centric development house. Working at velocity has
+                given me a new perspective on creating software that plays a critical role in people's lives. 
+                <br />
+                My role in the company is to help turn ideas into fleshed-out products.
+                Whether I'm starting with solid specs or squiggly lines, I always aim to
+                facilitate the design thinking process and get the job done. Some of the
+                brands we've worked for include Bonitas, Allegra, Afrocentric, and Clicks.
+                <br />
+                I've helped maintain, design, and led the development of varying projects that range from building UIs that align with corporate guidelines to more complex custom Content management systems for Velocity Cubed clients on that list Work care wellness, and Bonitas are included. 
+                <br />
+                I've primarily been responsible for leading the frontend development of our web apps alongside a small team. Some of the tools and systems we used include:
+                <ul>
+                    <li>Angular, SCSS, NPM, C#, and MSSMS.</li>
+                    <li>Figma, Adobe XD, Adobe Illustrator & Photoshop.</li>
+                    <li>Azure DevOps to host code & cloud-based solutions and <br/>handle our continuous integration and continuous deployment.</li>
+                    <li>JIRA flowing the Agile workflow.</li>
+                    <li>Angular, SCSS, NPM, C#, and MSSMS.</li>
+                </ul>
+                Some of the clients' projects I've had the pleasure of working on include:  
+                <br />
+
+                <a href="https://portal.allegra.co.za/">Allegra</a>,
+                Clicks Electronic Vaccination Data System, 
+                <a href="https://www.bonitas.co.za/">Bonitas</a>,<br />
+                <a href="https://play.google.com/store/apps/details?id=co.za.bonitas.memberapp&gl=ZA">Bonitas Member Amp Design</a>, 
+                WorkCare Wellness CMS,
+                Bonitas CMS 
+              </p>
+            </div>
+          </div>
+          <!-- <div class="sub-section">
+                    <div class="header">
+                        <h5>
+                            Awards
+                        </h5>
+                    </div>
+                    <div class="content-box">
+                        <div class="varsity-box">
+                            <p class=""> Investec Hackathon #1 2017
+                            </p>
+                        </div>
+                        <p class="content-text">
+                            The hackathon was a response to the introduction to open banking, an opportunity for people and businesses to use their transaction data to access better financial products and services. In this challenge we were tasked to pose as a fintech come up with
+                            a prototype viable market application. </p>
+                    </div>
+                </div> -->
+        </div>
+      </section>
+      <section>
+        <div class="sidenav">
+          <div></div>
+        </div>
+        <div class="body">
+          <div class="sub-section">
+            <div class="header">
+              <h5>Awards</h5>
+            </div>
+            <div class="content-box">
+              <div class="varsity-box">
+                <p class="">Investec Hackathon #1 2017</p>
+              </div>
+              <p class="content-text">
+                The hackathon was a response to the introduction to open
+                banking, an opportunity for people and businesses to use their
+                transaction data to access better financial products and
+                services. In this challenge we were tasked to pose as a fintech
+                come up with a prototype viable market application.
+              </p>
+            </div>
+            <br />
+            <br />
+            <div class="content-box">
+              <div class="varsity-box">
+                <p class="">Magic Eden Partner(Solana Blockchain)</p>
+              </div>
+              <p class="content-text">
+                I founded an NFT project on the Solana blockchain with the aim
+                of exploring how NFT technology could be used to help pioneer
+                self sustainable NGOs.<br /><br />
+                The project raised R42k in the first day of launch and allowed
+                me to be among the first African creators to partner with Magic
+                eden.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <script src="js/cv.js"></script>
+  </body>
+</html>
